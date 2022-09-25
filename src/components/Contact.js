@@ -19,25 +19,26 @@ const Contact = ({ data }) =>
     // Contact berisi foto, nama, telepon, dan email
     return (
       <List sx={{width: "550px", backgroundColor: '#cbe3e6'}}>
-        { data.map( contact_detail => 
-          {
-              return( <div key={contact_detail.phone}>
-                <ListItem>
-                  <ListItemAvatar>
-                    <Avatar src={contact_detail.photo} sx={{width: 75, height: 75}} ></Avatar>
-                  </ListItemAvatar>
-                  <ListItemText inset primary={contact_detail.name} primaryTypographyProps={{fontWeight: "500"}} secondary={
-                    <span>
-                      {contact_detail.phone}
-                      <br></br>
-                      {contact_detail.email}
-                    </span>
-                  }>
-                  </ListItemText>
-                  </ListItem>
-                  <Divider variant="middle" />
-              </div>);
-          })}
+        { 
+          data && data.length > 0 ? data.map( contact_detail => 
+            {
+                return( <div key={contact_detail.phone}>
+                  <ListItem>
+                    <ListItemAvatar>
+                      <Avatar src={contact_detail.photo} sx={{width: 75, height: 75}} ></Avatar>
+                    </ListItemAvatar>
+                    <ListItemText inset primary={contact_detail.name} primaryTypographyProps={{fontWeight: "500"}} secondary={
+                      <span>
+                        {contact_detail.phone}
+                        <br></br>
+                        {contact_detail.email}
+                      </span>
+                    }>
+                    </ListItemText>
+                    </ListItem>
+                    <Divider variant="middle" />
+                </div>);
+          }) : ""}
       </List>
     );
 };
