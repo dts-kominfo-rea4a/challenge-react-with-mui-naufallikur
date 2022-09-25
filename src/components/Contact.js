@@ -14,15 +14,14 @@ import {
 
 // Kalian bisa membuat CSS sendiri di src/components/Contact.css
 // atau langsung tambahkan dengan sx={{}}
-const Contact = ({ data }) => 
+const Contact = ({ dataContacts }) => 
 {
     // Contact berisi foto, nama, telepon, dan email
     return (
       <List sx={{width: "550px", backgroundColor: '#cbe3e6'}}>
-        {data.map( contact_detail => 
+        { dataContacts.map( contact_detail => 
           {
-            return(
-              <div key={contact_detail.phone}>
+              return( <div key={contact_detail.phone}>
                 <ListItem>
                   <ListItemAvatar>
                     <Avatar src={contact_detail.photo} sx={{width: 75, height: 75}} ></Avatar>
@@ -37,8 +36,7 @@ const Contact = ({ data }) =>
                   </ListItemText>
                   </ListItem>
                   <Divider variant="middle" />
-              </div>
-            );
+              </div>);
           })}
       </List>
     );
