@@ -19,7 +19,7 @@ const Contact = ({ data }) =>
     // Contact berisi foto, nama, telepon, dan email
     return (
       <List sx={{width: "550px", backgroundColor: '#cbe3e6'}}>
-        {data.map((contact) => 
+        {data.map( contact => 
           {
             return(
               <div key={contact.phone}>
@@ -39,8 +39,7 @@ const Contact = ({ data }) =>
                   <Divider variant="middle" />
               </div>
             );
-          })
-        }
+          })}
       </List>
     );
 };
