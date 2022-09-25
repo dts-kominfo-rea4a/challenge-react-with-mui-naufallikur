@@ -1,6 +1,6 @@
 import './App.css';
 import React, {useState} from "react";
-import {Grid, Box} from "@mui/material";
+import {Grid, Box, List} from "@mui/material";
 
 //import componentnya
 import Header from "./components/Header";
@@ -34,7 +34,15 @@ const App = () =>
             <ContactForm fntambahContacts={tambahContacts} />
           </Grid>
           <Grid item xs={6} sx={{padding: "0 150px"}}>
-            <Contact data={contacts} />
+            <List sx={{width: "550px", backgroundColor: '#cbe3e6'}}>
+              {
+                contacts.map( (contacts_element) => 
+                  {
+                    return(
+                    <Contact data={contacts_element} key={contacts_element.phone} />);
+                  })
+              }
+            </List>
           </Grid>
         </Box>
       </Grid>

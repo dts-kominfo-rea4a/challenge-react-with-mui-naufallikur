@@ -3,44 +3,36 @@
 // https://mui.com/material-ui/react-list/#folder-list
 import React from 'react';
 import { 
-    List,
-    ListItem,
-    ListItemText,
-    ListItemAvatar,
-    Avatar,
-    Divider
-    } from "@mui/material";
+  ListItem,
+  ListItemText,
+  ListItemAvatar,
+  Avatar,
+  Divider
+  } from "@mui/material";
 
 
 // Kalian bisa membuat CSS sendiri di src/components/Contact.css
 // atau langsung tambahkan dengan sx={{}}
 const Contact = ({ data }) => 
 {
-    // Contact berisi foto, nama, telepon, dan email
-    return (
-      <List sx={{width: "550px", backgroundColor: '#cbe3e6'}}>
-        { 
-          data && data.length > 0 ? data.map( contact_detail => 
-            {
-                return( <div key={contact_detail.phone}>
-                  <ListItem>
-                    <ListItemAvatar>
-                      <Avatar src={contact_detail.photo} sx={{width: 75, height: 75}} ></Avatar>
-                    </ListItemAvatar>
-                    <ListItemText inset primary={contact_detail.name} primaryTypographyProps={{fontWeight: "500"}} secondary={
-                      <span>
-                        {contact_detail.phone}
-                        <br></br>
-                        {contact_detail.email}
-                      </span>
-                    }>
-                    </ListItemText>
-                    </ListItem>
-                    <Divider variant="middle" />
-                </div>);
-          }) : ""}
-      </List>
-    );
+  // Contact berisi foto, nama, telepon, dan email
+  return( 
+  <>
+    <ListItem>
+      <ListItemAvatar>
+        <Avatar src={data.photo} sx={{width: 75, height: 75}} ></Avatar>
+      </ListItemAvatar>
+      <ListItemText inset primary={data.name} primaryTypographyProps={{fontWeight: "500"}} secondary={
+        <span>
+          {data.phone}
+          <br></br>
+          {data.email}
+        </span>
+      }>
+      </ListItemText>
+    </ListItem>
+    <Divider variant="middle" />
+  </>);
 };
 
 export default Contact;
