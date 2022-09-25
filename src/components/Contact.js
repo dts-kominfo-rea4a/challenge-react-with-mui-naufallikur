@@ -14,12 +14,12 @@ import {
 
 // Kalian bisa membuat CSS sendiri di src/components/Contact.css
 // atau langsung tambahkan dengan sx={{}}
-const Contact = ({ dataContacts }) => 
+const Contact = ({ data }) => 
 {
     // Contact berisi foto, nama, telepon, dan email
     return (
       <List sx={{width: "550px", backgroundColor: '#cbe3e6'}}>
-        { dataContacts.map( contact_detail => 
+        { data.map( contact_detail => 
           {
               return( <div key={contact_detail.phone}>
                 <ListItem>

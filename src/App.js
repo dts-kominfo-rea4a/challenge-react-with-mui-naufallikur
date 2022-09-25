@@ -35,7 +35,7 @@ const App = () =>
             <ContactForm fntambahContacts={tambahContacts} />
           </Grid>
           <Grid item xs={6} sx={{padding: "0 150px"}}>
-            <Contact dataContacts={contacts} />
+            <Contact data={contacts} />
           </Grid>
         </Box>
       </Grid>
